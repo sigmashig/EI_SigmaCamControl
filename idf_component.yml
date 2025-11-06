@@ -1,0 +1,3 @@
+dependencies:
+  SigmaLogger:
+    path: ../../EI_SigmaLoger/components/SigmaLogger/

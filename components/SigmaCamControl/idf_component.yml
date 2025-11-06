@@ -1,0 +1,10 @@
+include_dirs:
+- include
+dependencies:
+  ## Required IDF version
+  idf:
+    version: '>=5.5.0'
+  SigmaLogger:
+    path: ../../EI_SigmaLoger/components/SigmaLogger/
+  SigmaIO:
+    path: ../../EI_SigmaIO/components/SigmaIO/

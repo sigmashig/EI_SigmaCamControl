@@ -1,0 +1,26 @@
+dependencies:
+  SigmaIO:
+    dependencies:
+    - name: espressif/SigmaLogger
+      version: '*'
+    source:
+      path: C:\Projects\ESP-IDF\EI_SigmaIO\components\SigmaIO
+      type: local
+    version: '*'
+  SigmaLogger:
+    dependencies: []
+    source:
+      path: C:\Projects\ESP-IDF\EI_SigmaLoger\components\SigmaLogger
+      type: local
+    version: 0.1.0
+  idf:
+    source:
+      type: idf
+    version: 5.5.1
+direct_dependencies:
+- SigmaIO
+- SigmaLogger
+- idf
+manifest_hash: f5ce144d4ce3aa42da0ab9eec9a0a983da7398ea3beb7c267975e250151d1067
+target: esp32
+version: 2.0.0
