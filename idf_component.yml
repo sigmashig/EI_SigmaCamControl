@@ -1,3 +1,7 @@
 dependencies:
   SigmaLogger:
-    path: ../../EI_SigmaLoger/components/SigmaLogger/
+    path: ../EI_SigmaLogger/components/SigmaLogger/
+  SigmaIO:
+    path: ../EI_SigmaIO/components/SigmaIO/
+  SigmaVehicle:
+    path: ../EI_SigmaVehicle/components/SigmaVehicle/

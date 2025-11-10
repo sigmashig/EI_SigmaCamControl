@@ -1,15 +1,15 @@
 #pragma once
 
-bool testPS2();
+#include "testGimbal.h"
 
-#ifdef __cplusplus
-extern "C"
+#define MOTOR_PITCH 32
+#define MOTOR_YAW 33
+
+typedef enum
 {
-#endif
+    TEST_UNKNOWN = 0,
+    TEST_GIMBAL,
+} TestType;
 
-//    uint8_t ps2_transfer_byte(uint8_t data_out);
-//    void ps2_poll_controller();
-
-#ifdef __cplusplus
-}
-#endif
+void runApplication();
+bool CleanupTest(TestType testType);

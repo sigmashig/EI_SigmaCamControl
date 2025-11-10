@@ -1,0 +1,38 @@
+{
+    "configurations": [
+        {
+            "name": "ESP-IDF",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
+            "compilerPath": "C:/esp/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc.exe",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++2b",
+            "intelliSenseMode": "gcc-arm",
+            "includePath": [
+                "${workspaceFolder}/build/config",
+                "${workspaceFolder}/main",
+                "${workspaceFolder}/components/**/include",
+                "${workspaceFolder}/../../EI_SigmaLoger/components/SigmaLogger/include",
+                "${workspaceFolder}/../../EI_SigmaIO/components/SigmaIO/include",
+                "C:/esp/v5.5.1/esp-idf/components/**/include"
+            ],
+            "defines": [
+                "ESP_PLATFORM",
+                "IDF_VER=\"v5.5.1-dirty\"",
+                "SOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE",
+                "SOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ",
+                "_GLIBCXX_HAVE_POSIX_SEMAPHORE",
+                "_GLIBCXX_USE_POSIX_SEMAPHORE",
+                "_GNU_SOURCE",
+                "_POSIX_READER_WRITER_LOCKS"
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "C:/esp/v5.5.1/esp-idf"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ],
+    "version": 4
+}

@@ -1,4 +1,4 @@
-file(GLOB_RECURSE COMPONENT_SRCS "main.cpp" "*.cpp")
+file(GLOB_RECURSE COMPONENT_SRCS "*.cpp")
 
 idf_component_register(SRCS ${COMPONENT_SRCS}
                     INCLUDE_DIRS "." "../components/SigmaCamControl/" "../components/SigmaCamControl/include/"
