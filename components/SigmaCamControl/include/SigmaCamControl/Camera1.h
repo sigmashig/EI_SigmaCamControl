@@ -1,13 +1,13 @@
 #pragma once
 
-#include "CamController.h"
+#include "SigmaCamControl/CamController.h"
 
 namespace Sigma::CamControl
 {
 	class Camera1 : public CamController
 	{
 	public:
-		Camera1(CamControllerConfig camControllerConfig, Sigma::Logger *loger);
+		Camera1(CamControllerConfig camControllerConfig);
 		~Camera1();
 
 		bool Begin() override;
@@ -52,3 +52,4 @@ namespace Sigma::CamControl
 		bool setIrisOverSerial(int irisDirection);
 	};
 }
+

@@ -1,16 +1,16 @@
-#include "CamController.h"
-#include "Camera1.h"
+#include "SigmaCamControl/CamController.h"
+#include "SigmaCamControl/Camera1.h"
 #include <algorithm>
 
 namespace Sigma::CamControl
 {
-    CamController *CamController::Create(CamControllerConfig camControllerConfig, Sigma::Logger *loger)
+    CamController *CamController::Create(CamControllerConfig camControllerConfig)
     {
         CamController *camController = nullptr;
         switch (camControllerConfig.type)
         {
         case CamController::CAMERA_TYPE_1:
-            camController = new Camera1(camControllerConfig, loger);
+            camController = new Camera1(camControllerConfig);
             break;
         default:
             camController = nullptr;
@@ -29,11 +29,6 @@ namespace Sigma::CamControl
         {
             delete gimbal;
             gimbal = nullptr;
-        }
-        if (Log != nullptr && isLogerSet)
-        {
-            delete Log;
-            Log = nullptr;
         }
     }
 
@@ -54,11 +49,9 @@ namespace Sigma::CamControl
         return CameraType::CAMERA_TYPE_UNDEFINED;
     }
 
-    CamController::CamController(CamControllerConfig camControllerConfig, Sigma::Logger *loger)
+    CamController::CamController(CamControllerConfig camControllerConfig)
     {
         this->camControllerConfig = camControllerConfig;
-        this->Log = (loger != nullptr) ? loger : Sigma::GetLogger();
-        this->isLogerSet = (loger == nullptr);
         this->gimbal = nullptr;
     }
 }

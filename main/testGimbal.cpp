@@ -1,6 +1,6 @@
 #include "main.h"
 #include "testGimbal.h"
-#include "IOMgr.h"
+#include "SigmaIO/IOMgr.h"
 
 bool testGimbal()
 {

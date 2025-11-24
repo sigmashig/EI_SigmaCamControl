@@ -1,10 +1,10 @@
-#include "Camera1.h"
+#include "SigmaCamControl/Camera1.h"
 #include <esp_http_client.h>
-#include <Logger.h>
+#include <SigmaLogger/LoggerMgr.h>
 
 namespace Sigma::CamControl
 {
-    Camera1::Camera1(CamControllerConfig camControllerConfig, Sigma::Logger *loger) : CamController(camControllerConfig, loger)
+    Camera1::Camera1(CamControllerConfig camControllerConfig) : CamController(camControllerConfig)
     {
     }
 
@@ -213,7 +213,7 @@ namespace Sigma::CamControl
             }
         }
         esp_http_client_cleanup(client);
-        Log->Append("Response: (").Append(httpCode).Append(")").Append(response).Error();
+        Sigma::GetLogger(ccTag).Printf("Response: (%d)%s", httpCode, response.c_str()).Error();
         return (httpCode == 200);
     }
 

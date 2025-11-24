@@ -1,11 +1,12 @@
 #pragma once
 
-#include "Gimbal.h"
-#include "Logger.h"
+#include "SigmaVehicle/Gimbal.h"
+#include "SigmaLogger/LoggerMgr.h"
 #include "lwip/ip_addr.h"
 
 namespace Sigma::CamControl
 {
+	constexpr char ccTag[] = "CamController";
 	class CamController
 	{
 	public:
@@ -37,7 +38,7 @@ namespace Sigma::CamControl
 			} serialPTZConfig;
 		} CamControllerConfig;
 
-		static CamController *Create(CamControllerConfig camControllerConfig, Sigma::Logger *_loger = nullptr);
+		static CamController *Create(CamControllerConfig camControllerConfig);
 		virtual ~CamController();
 
 		virtual bool Begin() = 0;
@@ -72,12 +73,11 @@ namespace Sigma::CamControl
 		static CameraType GetCameraType(std::string typeString);
 
 	protected:
-		Sigma::Logger *Log = nullptr;
-		bool isLogerSet = false;
 		CamControllerConfig camControllerConfig;
-		CamController(CamControllerConfig camControllerConfig, Sigma::Logger *_loger);
+		CamController(CamControllerConfig camControllerConfig);
 		Sigma::Vehicle::Gimbal *gimbal = nullptr;
 
 	private:
 	};
 }
+

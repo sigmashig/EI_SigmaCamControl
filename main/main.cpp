@@ -1,10 +1,9 @@
 #include <freertos/FreeRTOS.h>
 #include <esp_event.h>
 #include "main.h"
-#include "Logger.h"
-#include "IOMgr.h"
+#include "SigmaLogger/LoggerMgr.h"
+#include "SigmaIO/IOMgr.h"
 
-Sigma::Logger Log(120);
 TestType activeTest = TEST_UNKNOWN;
 
 TestType testList[] = {
@@ -19,7 +18,7 @@ bool CleanupTest(TestType testType)
     err = Sigma::IO::IOMgr::Cleanup();
     if (err != Sigma::IO::SIGMAIO_SUCCESS)
     {
-        Log.Printf("Failed to cleanup SigmaIO:(%d) %s", (int16_t)err, Sigma::IO::IOErrorToString(err).c_str()).Error();
+        Sigma::GetLogger().Printf("Failed to cleanup SigmaIO:(%d) %s", (int16_t)err, Sigma::IO::IOErrorToString(err).c_str()).Error();
         result = false;
     }
     return result;
@@ -47,14 +46,14 @@ bool runTest(TestType testType)
     }
     default:
     {
-        Log.Append("Unknown test type").Error();
+        Sigma::GetLogger().Printf("Unknown test type").Error();
         testResult = false;
         break;
     }
     }
     if (!CleanupTest(activeTest))
     {
-        Log.Append("⚠️ Cleanup test failed").Error();
+        Sigma::GetLogger().Printf("⚠️ Cleanup test failed").Error();
     }
     activeTest = TEST_UNKNOWN;
 
@@ -63,29 +62,29 @@ bool runTest(TestType testType)
 
 void runApplication()
 {
-    Log.Internal("----------------------------------- Hello world! ----------------------------------------");
+    Sigma::GetLogger().Printf("----------------------------------- Hello world! ----------------------------------------").Info();
     int successCount = 0;
     int failureCount = 0;
 
     vTaskDelay(pdMS_TO_TICKS(1000));
     for (TestType testType : testList)
     {
-        Log.Printf("=====Running test: %d =====", testType).Info();
+        Sigma::GetLogger().Printf("=====Running test: %d =====", testType).Info();
         bool testResult = runTest(testType);
         if (testResult)
         {
             successCount++;
-            Log.Append("🟢[PASSED!]Test passed").Info();
+            Sigma::GetLogger().Printf("🟢[PASSED!]Test passed").Info();
         }
         else
         {
             failureCount++;
-            Log.Append("🔴[FAILED!]Test failed").Error();
+            Sigma::GetLogger().Printf("🔴[FAILED!]Test failed").Error();
         }
     }
-    Log.Append("===========================================").Info();
-    Log.Printf("Total tests: %d, 🟢 Success: %d, 🔴 Failure: %d", successCount + failureCount, successCount, failureCount).Info();
-    Log.Append("===========================================").Info();
+    Sigma::GetLogger().Printf("===========================================").Info();
+    Sigma::GetLogger().Printf("Total tests: %d, 🟢 Success: %d, 🔴 Failure: %d", successCount + failureCount, successCount, failureCount).Info();
+    Sigma::GetLogger().Printf("===========================================").Info();
 }
 
 extern "C" void app_main(void)

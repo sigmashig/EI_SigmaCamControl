@@ -1,8 +1,8 @@
 dependencies:
   SigmaIO:
     dependencies:
-    - name: espressif/SigmaLogger
-      version: '*'
+    - name: SigmaLogger
+      path: ../../../EI_SigmaLogger/components/SigmaLogger/
     source:
       path: C:\Projects\ESP-IDF\EI_SigmaIO\components\SigmaIO
       type: local
