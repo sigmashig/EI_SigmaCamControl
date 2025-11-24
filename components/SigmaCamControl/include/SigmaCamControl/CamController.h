@@ -2,7 +2,7 @@
 
 #include "SigmaVehicle/Gimbal.h"
 #include "SigmaLogger/LoggerMgr.h"
-#include "lwip/ip_addr.h"
+#include "esp_netif_ip_addr.h"
 
 namespace Sigma::CamControl
 {
@@ -25,7 +25,7 @@ namespace Sigma::CamControl
 			Sigma::Vehicle::Gimbal::GimbalConfig gimbalConfig;
 			struct
 			{
-				ip_addr_t ipAddress;
+				esp_ip_addr_t ipAddress;
 				std::string userId;
 				std::string password;
 				std::string ptzURLSuffix;
