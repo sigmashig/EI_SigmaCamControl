@@ -3,9 +3,3 @@ dependencies:
   ## Required IDF version
   idf:
     version: '>=5.5.0'
-  SigmaLogger: 
-   path: ../../EI_SigmaLogger/components/SigmaLogger/
-  SigmaIO: 
-   path: ../../EI_SigmaIO/components/SigmaIO/
-  SigmaVehicle: 
-   path: ../../EI_SigmaVehicle/components/SigmaVehicle/

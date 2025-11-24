@@ -33,10 +33,7 @@ direct_dependencies:
 - SigmaIO
 - SigmaLogger
 - SigmaVehicle
-- espressif/SigmaIO
-- espressif/SigmaLogger
-- espressif/SigmaVehicle
 - idf
-manifest_hash: 786256c2ba9514e9322cd91148baeb7fbce01b7050b460106325cc4b6b46a0af
+manifest_hash: f88dce0b89adad7f8f3398619e648a8536d2e48f97ba757ef385b648e25d0808
 target: esp32
 version: 2.0.0
