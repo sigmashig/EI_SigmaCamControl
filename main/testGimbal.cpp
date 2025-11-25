@@ -8,7 +8,7 @@ bool testGimbal()
 
     Sigma::IO::PinDefinition motorPin;
 
-    motorPin.pinType = Sigma::IO::PinType::SIGMAIO_PIN_TYPE_PWM;
+    motorPin.pinType = Sigma::IO::PinType::PIN_TYPE_PWM;
     motorPin.pinValue.pin = MOTOR_PITCH;
     motorPin.pinParams.pwmPin.frequency = 50;
     motorPin.pinParams.pwmPin.resolution = 12;
@@ -29,7 +29,6 @@ bool testGimbal()
     }
 
     // Rotate PITCH motor
-    
 
     return true;
 }
