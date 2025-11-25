@@ -2,15 +2,15 @@ dependencies:
   SigmaIO:
     dependencies:
     - name: SigmaLogger
-      path: ../../../EI_SigmaLogger/components/SigmaLogger/
+      path: ../../../SigmaLogger/components/SigmaLogger/
     source:
-      path: C:\Projects\ESP-IDF\EI_SigmaIO\components\SigmaIO
+      path: C:\Projects\ESP-IDF\SigmaIO\components\SigmaIO
       type: local
     version: 1.0.0
   SigmaLogger:
     dependencies: []
     source:
-      path: C:\Projects\ESP-IDF\EI_SigmaLogger\components\SigmaLogger
+      path: C:\Projects\ESP-IDF\SigmaLogger\components\SigmaLogger
       type: local
     version: 1.0.0
   SigmaVehicle:
@@ -22,7 +22,7 @@ dependencies:
     - name: espressif/SigmaIO
       version: '*'
     source:
-      path: C:\Projects\ESP-IDF\EI_SigmaVehicle\components\SigmaVehicle
+      path: C:\Projects\ESP-IDF\SigmaVehicle\components\SigmaVehicle
       type: local
     version: '*'
   idf:

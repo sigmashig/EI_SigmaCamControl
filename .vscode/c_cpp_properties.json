@@ -11,8 +11,8 @@
                 "${workspaceFolder}/build/config",
                 "${workspaceFolder}/main",
                 "${workspaceFolder}/components/**/include",
-                "${workspaceFolder}/../../EI_SigmaLoger/components/SigmaLogger/include",
-                "${workspaceFolder}/../../EI_SigmaIO/components/SigmaIO/include",
+                "${workspaceFolder}/../../SigmaLoger/components/SigmaLogger/include",
+                "${workspaceFolder}/../../SigmaIO/components/SigmaIO/include",
                 "C:/esp/v5.5.1/esp-idf/components/**/include"
             ],
             "defines": [
