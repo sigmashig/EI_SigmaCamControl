@@ -4,6 +4,11 @@
 
 namespace Sigma::CamControl
 {
+    Sigma::Logger &GetLogger()
+    {
+        return Sigma::GetLogger();
+    }
+    //--------------------------------------------------------
     CamController *CamController::Create(CamControllerConfig camControllerConfig)
     {
         CamController *camController = nullptr;

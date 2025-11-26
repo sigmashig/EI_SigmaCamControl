@@ -34,6 +34,6 @@ direct_dependencies:
 - SigmaLogger
 - SigmaVehicle
 - idf
-manifest_hash: f88dce0b89adad7f8f3398619e648a8536d2e48f97ba757ef385b648e25d0808
+manifest_hash: 09c2ebe967eedecf8769665edb7638a3d3fdf9a569adafade2dd2cd6ca75393d
 target: esp32
 version: 2.0.0

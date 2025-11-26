@@ -213,7 +213,7 @@ namespace Sigma::CamControl
             }
         }
         esp_http_client_cleanup(client);
-        Sigma::GetLogger(ccTag).Printf("Response: (%d)%s", httpCode, response.c_str()).Error();
+        GetLogger().Printf("Response: (%d)%s", httpCode, response.c_str()).Error();
         return (httpCode == 200);
     }
 

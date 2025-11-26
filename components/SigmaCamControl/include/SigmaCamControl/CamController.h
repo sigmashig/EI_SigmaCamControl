@@ -3,10 +3,11 @@
 #include "SigmaVehicle/Gimbal.h"
 #include "SigmaLogger/LoggerMgr.h"
 #include "esp_netif_ip_addr.h"
+#include "SigmaLogger/LoggerMgr.h"
 
 namespace Sigma::CamControl
 {
-	constexpr char ccTag[] = "CamController";
+	Sigma::Logger &GetLogger();
 	class CamController
 	{
 	public:
